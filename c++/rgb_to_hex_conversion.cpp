@@ -2,9 +2,8 @@
 #include <sstream>
 #include <algorithm>
 
-std::string rgb_to_hex(int r, int g, int b)
-{
-    static const char* digits = "0123456789ABCDEF";
+std::string rgb_to_hex(int r, int g, int b) {
+    static auto digits = "0123456789ABCDEF";
     r = std::clamp(r, 0, 255);
     g = std::clamp(g, 0, 255);
     b = std::clamp(b, 0, 255);
