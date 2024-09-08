@@ -2,7 +2,7 @@ def boolfuck(code, input=""):
     input = [entry == "1" for num in input for entry in format(ord(num), '08b')[::-1]]
     mem = {}
     output = []
-    ptr, eptr, iptr = 0, 0, 0
+    ptr, iptr = 0, 0
 
     jumps, stack = {}, []
     for idx, c in enumerate(code):

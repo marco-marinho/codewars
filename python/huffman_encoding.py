@@ -1,8 +1,10 @@
-from collections import Counter
 import heapq
+from collections import Counter
 
 
 class LeafNode:
+
+
     __match_args__ = ("weight", "value")
 
     def __init__(self, weight, value):
@@ -79,7 +81,6 @@ def decode(freqs, bits):
             case LeafNode(_, value):
                 output += value
                 curr = tree
-            case InternalNode:
+            case InternalNode(_, _, _):
                 curr = node
     return output
-

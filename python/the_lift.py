@@ -26,7 +26,7 @@ class Dinglemouse(object):
                             people_waiting = True
                 if stop_at_floor and not stops[-1] == floor:
                     stops.append(floor)
-            for floor in range(len(self.queues) -1, -1, -1):
+            for floor in range(len(self.queues) - 1, -1, -1):
                 stop_at_floor = False
                 for person in elevator:
                     if person == floor:
@@ -45,4 +45,3 @@ class Dinglemouse(object):
         if stops[-1] != 0:
             stops.append(0)
         return stops
-
