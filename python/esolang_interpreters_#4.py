@@ -1,5 +1,5 @@
 def boolfuck(code, input=""):
-    input = [entry == "1" for num in input for entry in format(ord(num), '08b')[::-1]]
+    input = [entry == "1" for num in input for entry in format(ord(num), "08b")[::-1]]
     mem = {}
     output = []
     ptr, iptr = 0, 0
@@ -31,5 +31,7 @@ def boolfuck(code, input=""):
         iptr += 1
     if len(output) % 8 != 0:
         output.extend([False] * (8 - (len(output) % 8)))
-    x = sum(map(lambda x: x[1] << x[0], enumerate(output))).to_bytes(len(output) // 8, 'little')
+    x = sum(map(lambda x: x[1] << x[0], enumerate(output))).to_bytes(
+        len(output) // 8, "little"
+    )
     return "".join([chr(a) for a in x])
