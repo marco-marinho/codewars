@@ -30,7 +30,7 @@ let rec repeat (c, n) =
 let sorter (c1, n1) (c2, n2) = if n1 > n2 then -1 else if n1 < n2 then 1 else if c1 < c2 then -1 else 1
 let other_sorter s1 s2 = if String.length s1 > String.length s2 then -1 else if String.length s1 < String.length s2 then 1 else String.compare s1 s2
 
-let filter (c, n) = n > 1
+let filter (_, n) = n > 1
 
 let remove_less l1 l2 =
   let rec keep (c, n) = function
@@ -49,10 +49,8 @@ in
   let s2 = remove_less b a in
   let rec aux acc x y = 
     match x, y with
-    | (c1, n1) :: t1, (((c2, n2) :: _) as l2) when n1 > n2 -> aux (("1:" ^ repeat (c1, n1)) :: acc) t1 l2
-    | (c1, n1) :: t1, (((c2, n2) :: _) as l2) when n1 = n2 && c1 < c2 -> aux (("1:" ^ repeat (c1, n1)):: acc) t1 l2
-    | ((c1, n1) :: _) as l1, (c2, n2) :: t2 when n1 < n2 -> aux (("2:" ^ repeat (c2, n2)) :: acc) l1 t2
-    | ((c1, n1) :: _) as l1, (c2, n2) :: t2 when n1 = n2 && c2 < c1 -> aux (("2:" ^ repeat (c2, n2)) :: acc) l1 t2
+    | (c1, n1) :: t1, (((c2, n2) :: _) as l2) when n1 > n2 || (n1 = n2 && c1 < c2) -> aux (("1:" ^ repeat (c1, n1)) :: acc) t1 l2
+    | ((c1, n1) :: _) as l1, (c2, n2) :: t2 when n1 < n2 || (n1 = n2 && c2 < c1) -> aux (("2:" ^ repeat (c2, n2)) :: acc) l1 t2
     | (c1, n1) :: t1, (c2, n2) :: t2 when c1 = c2 && n1 = n2 -> aux (("=:" ^ repeat (c1, n1)) :: acc) t1 t2
     | (c1, n1) :: t1, [] -> aux (("1:" ^ repeat (c1, n1)) :: acc) t1 []
     | [], (c2, n2) :: t2 -> aux (("2:" ^ repeat (c2, n2)) :: acc) [] t2

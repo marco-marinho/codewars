@@ -2,7 +2,7 @@ from heapq import heappush, heappop
 
 
 def path_finder(area):
-    area = [list(map(int, list(line))) for line in area.split('\n')]
+    area = [list(map(int, list(line))) for line in area.split("\n")]
     rows, cols = len(area), len(area[0])
     queue = []
     visited = set()

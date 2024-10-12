@@ -1,8 +1,10 @@
 import bisect
+
+
 def calculate(rectangles):
     events = []
 
-    for (x0, y0, x1, y1) in rectangles:
+    for x0, y0, x1, y1 in rectangles:
         events.append((x0, y0, y1, 1))  # Start event
         events.append((x1, y0, y1, -1))  # End event
 
@@ -15,7 +17,7 @@ def calculate(rectangles):
     def compute_y_length():
         y_length = 0
         prev_y = -1
-        for (start, end) in active_intervals:
+        for start, end in active_intervals:
             prev_y = max(prev_y, start)
             y_length += max(0, end - prev_y)
             prev_y = max(prev_y, end)

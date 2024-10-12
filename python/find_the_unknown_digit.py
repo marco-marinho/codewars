@@ -1,5 +1,6 @@
 import re
 
+
 def solve_runes(runes):
     if not "0" in runes:
         zero_case = runes.replace("?", "0").replace("=", "==")

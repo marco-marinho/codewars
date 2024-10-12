@@ -3,8 +3,6 @@ from collections import Counter
 
 
 class LeafNode:
-
-
     __match_args__ = ("weight", "value")
 
     def __init__(self, weight, value):

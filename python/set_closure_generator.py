@@ -1,9 +1,11 @@
 import heapq
+
+
 def closure_gen(*s):
     if 1 in s:
         yield 1
     h = []
-    s = list(filter(lambda x : x != 1, s))
+    s = list(filter(lambda x: x != 1, s))
     for element in s:
         heapq.heappush(h, element)
     last = None
@@ -14,5 +16,5 @@ def closure_gen(*s):
         if next_val != last:
             last = next_val
             for element in s:
-                heapq.heappush(h, next_val * element) 
+                heapq.heappush(h, next_val * element)
             yield next_val

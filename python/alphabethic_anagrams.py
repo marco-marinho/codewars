@@ -15,4 +15,3 @@ def list_position(word):
                 idx += possible * count[entry] // (len(word) - i)
         count[word[i]] -= 1
     return idx
-

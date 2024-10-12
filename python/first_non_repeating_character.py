@@ -1,5 +1,6 @@
 from collections import Counter
 
+
 def first_non_repeating_letter(s):
     if not s:
         return ""

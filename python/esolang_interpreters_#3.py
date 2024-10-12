@@ -28,4 +28,6 @@ def interpreter(code, iterations, width, height):
             iptr = jumps[iptr]
         elif inst == "]" and mem[ptr[0]][ptr[1]]:
             iptr = jumps[iptr]
-    return "\r\n".join(["".join(["1" if entry else "0" for entry in row]) for row in mem])
+    return "\r\n".join(
+        ["".join(["1" if entry else "0" for entry in row]) for row in mem]
+    )

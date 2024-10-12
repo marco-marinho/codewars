@@ -1,5 +1,4 @@
 class Dinglemouse(object):
-
     def __init__(self, queues, capacity):
         self.queues = [list(x) for x in queues]
         self.capacity = capacity

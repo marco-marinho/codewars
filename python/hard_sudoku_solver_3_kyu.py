@@ -7,7 +7,7 @@ def get_valid(puzzle, row, col):
     valid -= set(puzzle[:, col].flatten())
     x_offset = (row // 3) * 3
     y_offset = (col // 3) * 3
-    valid -= set(puzzle[x_offset:x_offset + 3, y_offset:y_offset + 3].flatten())
+    valid -= set(puzzle[x_offset : x_offset + 3, y_offset : y_offset + 3].flatten())
     return valid
 
 

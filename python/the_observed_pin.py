@@ -12,7 +12,7 @@ def recurse(observed, index, current, result):
         "7": ["4", "7", "8"],
         "8": ["5", "7", "8", "9", "0"],
         "9": ["6", "8", "9"],
-        "0": ["8", "0"]
+        "0": ["8", "0"],
     }
     for entry in table[observed[index]]:
         recurse(observed, index + 1, current + entry, result)

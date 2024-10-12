@@ -35,8 +35,8 @@ def closest_recurse(points: NDArray, p, d):
         if d0 < d:
             return p0, d0
         return p, d
-    p1, d1 = closest_recurse(points[:points.shape[0] // 2], p, d)
-    p2, d2 = closest_recurse(points[points.shape[0] // 2:], p, d)
+    p1, d1 = closest_recurse(points[: points.shape[0] // 2], p, d)
+    p2, d2 = closest_recurse(points[points.shape[0] // 2 :], p, d)
     if d1 < d:
         p, d = p1, d1
     if d2 < d:
