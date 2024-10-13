@@ -1,5 +1,5 @@
 def longest_slide_down(pyramid):
-    def aux (pyramid, idx, level, memo):
+    def aux(pyramid, idx, level, memo):
         if (idx, level) in memo:
             return memo[(idx, level)]
         if level == len(pyramid) - 1:
@@ -9,4 +9,5 @@ def longest_slide_down(pyramid):
         res = max(left, right) + pyramid[level][idx]
         memo[(idx, level)] = res
         return res
+
     return aux(pyramid, 0, 0, {})
