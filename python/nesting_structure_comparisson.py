@@ -7,9 +7,9 @@ def is_scalar(x):
 
 def same_structure_as(original, other):
     match original, other:
-        case [[], []]:
+        case [], []:
             return True
-        case [[*orig_elements], [*other_elements]]:
+        case list(orig_elements), list(other_elements):
             if len(orig_elements) == len(other_elements):
                 return all(
                     [
