@@ -1,12 +1,9 @@
 #include <iostream>
 #include <string>
-#include "adding_big_numbers.cpp"
+#include "multiply_strings.cpp"
 
 
 int main(){
-    std::string a = "10";
-    std::string b = "35679";
-    std::string c = add(a, b);
-    std::cout << c << std::endl;
+    std::cout << multiply("1020303004875647366210", "2774537626200857473632627613") << std::endl;
     return 0;
 }
