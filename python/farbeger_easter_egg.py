@@ -1,5 +1,5 @@
-def height(n, m):  
-    if n == 0 or m==0:
+def height(n, m):
+    if n == 0 or m == 0:
         return 0
     if n > m:
         return height(m, m)
