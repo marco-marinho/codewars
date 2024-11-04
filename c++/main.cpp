@@ -40,6 +40,6 @@ std::string factorial(int factorial)
 
 int main()
 {
-    std::cout << factorial(25) << std::endl;
+    std::cout << factorial(250) << std::endl;
     return 0;
 }
