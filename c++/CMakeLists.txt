@@ -9,6 +9,7 @@ add_library(codewars
         rgb_to_hex_conversion.cpp
         direction_reduction.cpp
         adding_big_numbers.cpp
+        factorial_of_big_number.cpp
         )
 
 add_executable(code_wars main.cpp)
